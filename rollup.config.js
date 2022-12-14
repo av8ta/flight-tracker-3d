@@ -6,6 +6,9 @@ import injectProcessEnv from 'rollup-plugin-inject-process-env'
 import copy from 'rollup-plugin-copy'
 import { terser } from 'rollup-plugin-terser'
 import image from '@rollup/plugin-image'
+import Dotenv from 'rollup-plugin-dotenv'
+const dotenv = Dotenv.default
+console.log('dotenv', dotenv)
 
 export default [
   {
@@ -18,6 +21,7 @@ export default [
       },
     ],
     plugins: [
+      dotenv(),
       resolve(),
       commonjs(),
       typescript({ tsconfig: './ui/tsconfig.json' }),
@@ -27,10 +31,11 @@ export default [
       copy({
         targets: [
           { src: 'ui/index.html', dest: 'public' },
-          { src: 'ui/assets/images/**/*', dest: 'public/images' }
+          { src: 'ui/assets/images/**/*', dest: 'public/images' },
+          { src: 'ui/assets/Cesium/**/*', dest: 'public/cesium' }
         ]
       }),
-      injectProcessEnv({ NODE_ENV: 'production' })
+      injectProcessEnv({ NODE_ENV: 'production', cesium_token: process.env.cesium_token })
     ]
   }
 ]

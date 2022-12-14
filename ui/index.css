@@ -1,9 +1,24 @@
-
 body {
   margin: 0;
 }
 
-.leaflet-container {
+#appContainer {
   width: 100vw;
   height: 100vh;
+}
+
+.leaflet-container {
+  height: 100%;
+}
+
+#cesiumContainer {
+  height: 100%;
+}
+
+.split-screen {
+  display: flex;
+}
+
+.split-screen__half {
+  flex: 1;
 }

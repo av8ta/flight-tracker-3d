@@ -1,0 +1,7 @@
+# rename this file to .env and enter your cesium token below and then: npm run build
+# your access token can be found at: https://cesium.com/ion/tokens
+
+cesium_token=eyJ....
+
+# websocket_port=2222
+# websocket_host=localhost
