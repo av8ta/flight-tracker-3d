@@ -29,11 +29,13 @@
   "typings": "./lib/index.d.ts",
   "scripts": {
     "dev": "DEBUG=* nodemon lib/index.js",
+    "adsb": "docker compose up",
     "build": "npm run clean && npm run build:lib && npm run build:web",
     "build:lib": "tsc -b src",
     "watch:lib": "tsc -b -w src",
     "build:web": "rollup -c",
     "watch:web": "rollup -c -w",
+    "serve": "serve public",
     "clean": "rimraf lib public",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "prepublish": "npm run build"
@@ -55,6 +57,7 @@
     "rollup-plugin-dotenv": "^0.4.1",
     "rollup-plugin-import-css": "^3.1.0",
     "rollup-plugin-inject-process-env": "^1.3.1",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "serve": "^14.1.2"
   }
 }
