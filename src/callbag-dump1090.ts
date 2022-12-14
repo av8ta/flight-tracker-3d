@@ -74,7 +74,15 @@ function parseDecoded(data = '') {
   // "!callsign, lon, lat, altitude, speed, heading, timestamp*"
   if (data[0] === '!' && data[data.length - 1] === '*') {
     const [callsign, lon, lat, altitude, speed, heading, timestamp] = data.split(',')
-    return { callsign: callsign.slice(1).trim(), lon, lat, altitude, speed, heading, timestamp: timestamp.split('*')[0] }
+    return {
+      callsign: callsign.slice(1).trim(),
+      lon: Number.parseFloat(lon),
+      lat: Number.parseFloat(lat),
+      altitude: Number.parseFloat(altitude),
+      speed: Number.parseFloat(speed),
+      heading: Number.parseFloat(heading),
+      timestamp: Number.parseFloat(timestamp.split('*')[0])
+    }
   }
   return null
 }
