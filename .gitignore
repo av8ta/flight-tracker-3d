@@ -2,4 +2,3 @@ node_modules
 lib
 public
 *.env*
-ui/assets/Cesium
