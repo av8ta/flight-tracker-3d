@@ -31,6 +31,7 @@ export default function ({ port = PORT, host = HOST, retries = defaultRetries }:
   client.on('data', chunk => {
     const lines = chunk.toString('utf8').split('\n').filter(line => line.length > 0)
     for (let message of lines) {
+      log(message)
       const decoded: string = decoder.decodeMsg(message)
       if (decoded.length > 0) {
         const parsed = parseDecoded(decoded)
