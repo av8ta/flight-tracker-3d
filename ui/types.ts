@@ -1,7 +1,7 @@
 export interface AdsbData {
   message: string,
-  decoded: string,
-  parsed: Position
+  decoded?: string,
+  parsed?: Position
 }
 
 export interface Position {
