@@ -10,6 +10,7 @@ specifiers:
   '@types/node': ^18.11.13
   '@types/ws': ^8.5.3
   callbag-basics-esmodules: ^4.0.0
+  callbag-last: ^1.1.4
   callbag-observe: ^1.0.0
   callbag-subject: ^2.1.0
   callbag-subscribe: ^1.5.1
@@ -34,6 +35,7 @@ specifiers:
 
 dependencies:
   callbag-basics-esmodules: 4.0.0
+  callbag-last: 1.1.4
   callbag-observe: 1.0.0
   callbag-subject: 2.1.0
   callbag-subscribe: 1.5.1
@@ -47,7 +49,7 @@ dependencies:
   ws: 8.11.0
 
 devDependencies:
-  '@rollup/plugin-commonjs': 23.0.4_rollup@3.7.4
+  '@rollup/plugin-commonjs': 23.0.5_rollup@3.7.4
   '@rollup/plugin-image': 3.0.1_rollup@3.7.4
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.7.4
   '@rollup/plugin-typescript': 10.0.1_fhibmf72xnv5tve6nwed265eae
@@ -219,8 +221,8 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
 
-  /@rollup/plugin-commonjs/23.0.4_rollup@3.7.4:
-    resolution: {integrity: sha512-bOPJeTZg56D2MCm+TT4psP8e8Jmf1Jsi7pFUMl8BN5kOADNzofNHe47+84WVCt7D095xPghC235/YKuNDEhczg==}
+  /@rollup/plugin-commonjs/23.0.5_rollup@3.7.4:
+    resolution: {integrity: sha512-IwI51j5kCmLMYsErEvZAID/pg7Z1qgyVJ+QIPDDIg1AOPbIGbdTCjuHDWIBCtoF1dvMkXfQv7B2eTadjnLRbmA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
@@ -610,6 +612,10 @@ packages:
     resolution: {integrity: sha512-xkYj7t/l9+GaP0kvPi6LadF3ZNSiQAhbEzwnnTrDB/UtkBCrzKPZ9Kiti8P8oHYxL2jGEuRWi86PD3uM7qXLbg==}
     dependencies:
       callbag: 1.1.0
+    dev: false
+
+  /callbag-last/1.1.4:
+    resolution: {integrity: sha512-LZNre5ADJq9Prwumw1rPMnex3lUzUQCXFUVuJMKMqzs9OvNgpMPf6ZJkPn9YR944tp5X35KP1Nn0mqokHHN0TA==}
     dev: false
 
   /callbag-map/1.0.1:

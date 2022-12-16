@@ -2,7 +2,8 @@ import net from 'node:net'
 import makeSubject from 'callbag-subject'
 import decoder from 'decoder1090-c'
 import Debug from 'debug'
-import { Signal } from './types.js'
+import { Signal, AdsbData } from './types.js'
+import fs from 'node:fs'
 
 const log = Debug('callbag-dump1090')
 
@@ -18,6 +19,31 @@ export interface Options {
   retries?: number
 }
 
+// @ts-ignore
+function outputTestData(chunk: Buffer) {
+  fs.appendFileSync('/home/av8ta/coder/flight-tracking/kahu/src/test/new-data.raw', chunk.toString())
+}
+export function parseData(chunk: Buffer): AdsbData | null {
+  // outputTestData(chunk)
+  const lines = chunk.toString('utf8').split(';').filter(line => line.length > 0)
+  // console.log(lines)
+  for (let msg of lines) {
+    const message = `${msg};`
+    log(message)
+    // console.log(message)
+    const decoded: string = decoder.decodeMsg(message, 1671160550)
+    // console.log(decoded)
+
+    if (decoded.length > 0) {
+      const parsed = parseDecoded(decoded)
+      if (parsed) return { message, decoded, parsed }
+      else return { message, decoded }
+    }
+    else return { message }
+  }
+  return null
+}
+
 export default function ({ port = PORT, host = HOST, retries = defaultRetries }: Options = {}) {
   const messages = makeSubject()
 
@@ -29,17 +55,8 @@ export default function ({ port = PORT, host = HOST, retries = defaultRetries }:
   })
 
   client.on('data', chunk => {
-    const lines = chunk.toString('utf8').split('\n').filter(line => line.length > 0)
-    for (let message of lines) {
-      log(message)
-      const decoded: string = decoder.decodeMsg(message)
-      if (decoded.length > 0) {
-        const parsed = parseDecoded(decoded)
-        if (parsed) messages(Signal.DATA, { message, decoded, parsed })
-        else messages(Signal.DATA, { message, decoded })
-      }
-      else messages(Signal.DATA, { message })
-    }
+    const data = parseData(chunk)
+    if (data) messages(Signal.DATA, data)
   })
 
   client.on('end', () => {

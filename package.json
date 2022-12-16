@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "callbag-basics-esmodules": "^4.0.0",
+    "callbag-last": "^1.1.4",
     "callbag-observe": "^1.0.0",
     "callbag-subject": "^2.1.0",
     "callbag-subscribe": "^1.5.1",
@@ -28,6 +29,7 @@
   ],
   "typings": "./lib/index.d.ts",
   "scripts": {
+    "start": "DEBUG=* node lib/index.js",
     "dev": "DEBUG=* nodemon lib/index.js",
     "adsb": "docker compose up",
     "build": "npm run clean && npm run build:lib && npm run build:web",
@@ -38,6 +40,7 @@
     "serve": "serve public",
     "clean": "rimraf lib public",
     "lint": "tslint -c tslint.json src/**/*.ts",
+    "test": "rimraf lib && npm run build:lib && node lib/test/index.js",
     "prepublish": "npm run build"
   },
   "devDependencies": {
