@@ -26,14 +26,10 @@ function outputTestData(chunk: Buffer) {
 export function parseData(chunk: Buffer): AdsbData | null {
   // outputTestData(chunk)
   const lines = chunk.toString('utf8').split(';').filter(line => line.length > 0)
-  // console.log(lines)
   for (let msg of lines) {
     const message = `${msg};`
     log(message)
-    // console.log(message)
     const decoded: string = decoder.decodeMsg(message, 1671160550)
-    // console.log(decoded)
-
     if (decoded.length > 0) {
       const parsed = parseDecoded(decoded)
       if (parsed) return { message, decoded, parsed }

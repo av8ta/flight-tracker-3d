@@ -15,7 +15,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 observe((message: { data: string }) => {
   const adsbData: AdsbData = JSON.parse(message.data)
-  console.log(adsbData)
   if (adsbData.parsed) {
     const { callsign, lon, lat, altitude, speed, heading, timestamp } = adsbData.parsed
     const position: LatLngTuple = [lat, lon]
