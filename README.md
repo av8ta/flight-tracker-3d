@@ -2,7 +2,9 @@
 
 Decodes ads-b packets recived from a software defined radio such as the repurposed digital tv usb stick known as rtl-sdr and displays flight tracks.
 
-Left pane shows the positions on a leaflet map. The right side shows a 3D rendered view courtesy of cesiumjs.
+Left pane shows the positions on a leaflet map. The right side shows a 3D rendered view from the pilot's perspective courtesy of cesiumjs.
+
+![screenshot](./screenshot.png)
 
 ## Usage
 
