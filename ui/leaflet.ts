@@ -13,8 +13,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map)
 
-L.marker(location).addTo(map)
-
 observe((message: { data: string }) => {
   const adsbData: AdsbData = JSON.parse(message.data)
   console.log(adsbData)
