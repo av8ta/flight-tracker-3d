@@ -8,7 +8,6 @@ import { terser } from 'rollup-plugin-terser'
 import image from '@rollup/plugin-image'
 import Dotenv from 'rollup-plugin-dotenv'
 const dotenv = Dotenv.default
-console.log('dotenv', dotenv)
 
 export default [
   {
