@@ -1,4 +1,4 @@
-import { parseData } from '../callbag-dump1090.js'
+import { parseData } from '../callbag-dump1090.js' // tslint:disable-next-line:no-implicit-dependencies
 import assert from 'node:assert'
 import { pipe, fromIter, map } from 'callbag-basics-esmodules'
 import last from 'callbag-last'
@@ -29,7 +29,7 @@ pipe(
       assert(result.parsed.speed === expected.speed, 'Speed value is correct')
       assert(result.parsed.heading === expected.heading, 'Heading value is correct')
     },
-    error: (error: unknown) => { throw new Error(`Error in test: ${error}`) },
+    error: (error: unknown) => { throw new Error(`Error in test: ${error}`) }, // tslint:disable-next-line:no-console
     complete: () => console.log('Test Passed')
   })
 )

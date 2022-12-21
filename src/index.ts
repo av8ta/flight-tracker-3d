@@ -2,7 +2,7 @@ import Dump1090 from './callbag-dump1090.js'
 import { WebSocketServer } from 'ws'
 import observe from 'callbag-observe'
 import Debug from 'debug'
-
+// tslint:disable-next-line:no-console
 const log = Debug('callbag-dump1090:ws')
 
 const messages = Dump1090()

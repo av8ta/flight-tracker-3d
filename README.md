@@ -21,7 +21,7 @@ websocket_port=<your port>
 websocket_host=<your host>
 ```
 
-Sign up and then acquire a cesium token here https://cesium.com/ion/tokens. Place the token in your .env file.
+Sign up and then acquire a cesium token here <https://cesium.com/ion/tokens>. Place the token in your .env file.
 
 ```shell
 cesium_token=<your token>
@@ -42,3 +42,13 @@ npm start
 # serve webapp
 npm run serve
 ```
+
+# callbag-net
+
+👜 A callbag source (client) for nodejs net.Socket
+
+[callbag-net](https://www.npmjs.com/package/callbag-net) has been refactored out of this project and published to npm.
+
+You might find it useful for streaming nodejs [`net.Socket`](https://nodejs.org/api/net.html#class-netsocket) tcp or ipc connections:
+
+"This class is an abstraction of a TCP socket or a streaming IPC endpoint (uses named pipes on Windows, and Unix domain sockets otherwise)."
