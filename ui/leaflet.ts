@@ -2,7 +2,7 @@ import './index.css'
 import 'leaflet/dist/leaflet.css'
 import L, { LatLngTuple } from 'leaflet'
 import observe from 'callbag-observe'
-import { AdsbData } from './types'
+import { AdsbData } from './types.js'
 import { adsb$ } from './data.js'
 
 const location: LatLngTuple = [-8.580189, 115.278943]

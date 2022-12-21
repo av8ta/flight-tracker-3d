@@ -4,7 +4,7 @@ window.CESIUM_BASE_URL = '/cesium' // The URL on your server where CesiumJS's st
 import * as Cesium from 'cesium'
 import 'cesium/Build/Cesium/Widgets/widgets.css'
 import observe from 'callbag-observe'
-import { AdsbData } from './types'
+import { AdsbData } from './types.js'
 import { adsb$ } from './data.js'
 
 if (!process.env.cesium_token) throw new Error('Place your cesium token in .env - an example file is named dotenv')
