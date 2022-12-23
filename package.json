@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "callbag-adsb": "^1.0.0",
     "callbag-basics-esmodules": "^4.0.0",
     "callbag-last": "^1.1.4",
     "callbag-net": "^1.2.0",

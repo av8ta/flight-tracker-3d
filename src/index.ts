@@ -1,12 +1,11 @@
-import Dump1090 from './callbag-dump1090.js'
+import Dump1090Source from 'callbag-adsb'
 import { WebSocketServer } from 'ws'
 import observe from 'callbag-observe'
 import Debug from 'debug'
-// tslint:disable-next-line:no-console
 const log = Debug('callbag-dump1090:ws')
 
-const messages = Dump1090()
-const PORT = Number.parseInt(process.env.websocket_port || '2222', 10)
+const messages = Dump1090Source()
+const PORT = Number.parseInt(process.env['websocket_port'] || '2222', 10)
 const wsServer = new WebSocketServer({ port: PORT })
 
 wsServer.on('connection', _socket => {
