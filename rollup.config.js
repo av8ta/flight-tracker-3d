@@ -23,7 +23,7 @@ export default [
       dotenv(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './ui/tsconfig.json' }),
+      typescript({ tsconfig: './tsconfig.json' }),
       image(),
       css(),
       terser(),

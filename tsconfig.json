@@ -1,5 +1,10 @@
 {
+	"include": [
+		"./ui/**/*"
+	],
 	"compilerOptions": {
+		"rootDir": "./ui",
+		"outDir": "./public",
 		"target": "esnext",
 		"module": "esnext",
 		"lib": [
@@ -12,6 +17,10 @@
 		"esModuleInterop": true,
 		"strict": true,
 		"alwaysStrict": true,
+		"allowJs": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
 		"strictFunctionTypes": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
@@ -27,5 +36,9 @@
 		"downlevelIteration": true,
 		"declaration": true,
 		"pretty": true,
-	}
+	},
+	"typeRoots": [
+    "./node_modules/callbag-adsb/lib/",
+    "./node_modules/@types/"
+  ],
 }

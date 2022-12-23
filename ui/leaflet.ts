@@ -2,7 +2,7 @@ import './index.css'
 import 'leaflet/dist/leaflet.css'
 import L, { LatLngTuple } from 'leaflet'
 import observe from 'callbag-observe'
-import { AdsbData } from './types.js'
+import type { AdsbData } from 'callbag-adsb'
 import { adsb$ } from './data.js'
 
 const location: LatLngTuple = [-8.580189, 115.278943]
@@ -24,6 +24,7 @@ observe((message: { data: string }) => {
       fillOpacity: 0.5,
       radius: 400
     }).addTo(map)
+    // tslint:disable-next-line
     circle.bindPopup(`<b>${callsign ? `${callsign} at ` : ''} ${altitude} feet bearing ${heading}° at ${speed} knots</b></br><p>${Date(timestamp)}</p>`)
   }
 })(adsb$)
